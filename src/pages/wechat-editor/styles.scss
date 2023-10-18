@@ -1,0 +1,49 @@
+
+.ProseMirror {
+  max-width: 100%;
+
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  h1 {
+    font-size: 2.6666667em;
+    margin-top: 0;
+    margin-bottom: 0.8333333em;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 1.6666667em;
+    margin-top: 1.8666667em;
+    margin-bottom: 1.0666667em;
+    line-height: 1.3333333;
+  }
+
+  h3 {
+    font-size: 1.3333333em;
+    margin-top: 1.6666667em;
+    margin-bottom: 0.6666667em;
+    line-height: 1.5;
+  }
+
+  h4 {
+    margin-top: 1.7777778em;
+    margin-bottom: 0.4444444em;
+    line-height: 1.5;
+  }
+
+  .tippy-box {
+    max-width: 400px !important;
+  }
+
+  .mathematics-editor {
+    background-color: var(--text-stone-100);
+    color: var(--haydn-white);
+    padding: 0.2rem 0.5rem;
+    border-radius: .25rem;
+    display: inline-block;
+  }
+
+}
