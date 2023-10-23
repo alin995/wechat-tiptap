@@ -1,75 +1,48 @@
 
 .ProseMirror {
-  max-width: 100%;
+	max-width: 100%;
 
-  &:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-  }
+	&:focus {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+	}
 
-  h1 {
-    font-size: 2.6666667em;
-    margin-top: 0;
-    margin-bottom: 0.8333333em;
-    line-height: 1;
-  }
+	table {
+		border-collapse: collapse;
+		table-layout: fixed;
+		width: 100%;
 
-  h2 {
-    font-size: 1.6666667em;
-    margin-top: 1.8666667em;
-    margin-bottom: 1.0666667em;
-    line-height: 1.3333333;
-  }
+		tbody {
+			td, th {
+				vertical-align: top;
+				box-sizing: border-box;
+				position: relative;
+			}
 
-  h3 {
-    font-size: 1.3333333em;
-    margin-top: 1.6666667em;
-    margin-bottom: 0.6666667em;
-    line-height: 1.5;
-  }
+			.column-resize-handle {
+				position: absolute;
+				right: -2px;
+				top: 0;
+				bottom: -2px;
+				width: 4px;
+				z-index: 20;
+				background-color: rgba(0, 0, 255, .12);
+				pointer-events: none;
+			}
+		}
+	}
 
-  h4 {
-    margin-top: 1.7777778em;
-    margin-bottom: 0.4444444em;
-    line-height: 1.5;
-  }
+	.tippy-box {
+		max-width: 400px !important;
+	}
 
-  table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
-
-    tbody {
-      td, th {
-        vertical-align: top;
-        box-sizing: border-box;
-        position: relative;
-      }
-
-      .column-resize-handle {
-        position: absolute;
-        right: -2px;
-        top: 0;
-        bottom: -2px;
-        width: 4px;
-        z-index: 20;
-        background-color: rgba(0, 0, 255, .12);
-        pointer-events: none;
-      }
-    }
-  }
-
-  .tippy-box {
-    max-width: 400px !important;
-  }
-
-  .mathematics-editor {
-    background-color: var(--text-stone-100);
-    color: var(--text-white);
-    padding: 0.2rem 0.5rem;
-    border-radius: .25rem;
-    display: inline-block;
-  }
+	.mathematics-editor {
+		background-color: var(--text-stone-100);
+		color: var(--text-white);
+		padding: 0.2rem 0.5rem;
+		border-radius: .25rem;
+		display: inline-block;
+	}
 
 }
 

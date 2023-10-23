@@ -2,11 +2,11 @@ export const DEFAULT_CONTENT = {
     type: "doc",
     content: [{
         type: "heading", attrs: {"level": 1}, content: [{
-            type: "text", text: "Haydn"
+            type: "text", text: "WechatTiptap"
         }]
     }, {
         type: "paragraph", content: [{
-            type: "text", text: "Haydn 是一个AI加持的 "
+            type: "text", text: "WechatTiptap 是一个AI加持的 "
         }, {
             type: "text", text: "WYSIWYG", marks: [{
                 type: "bold"

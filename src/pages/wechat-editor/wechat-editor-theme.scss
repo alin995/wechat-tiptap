@@ -10,12 +10,28 @@
 
 	@apply m-0 font-sans text-lg leading-7 bg-white;
 
+	h1 {
+		@apply mt-0 mb-[0.8333333em] text-5xl leading-none;
+	}
+
+	h2 {
+		@apply mt-[1.6666667em] mb-[1em] text-3xl leading-[1.3333333];
+	}
+
+	h3 {
+		@apply mt-[1.6666667em] mb-[.6666667em] text-2xl leading-[1.3333333];
+	}
+
+	h4 {
+		@apply mt-[1.6666667em] mb-[.4444444em] text-2xl leading-[1.3333333];
+	}
+
 	a {
-		@apply text-stone-400 underline underline-offset-4 hover:text-stone-600;
+		@apply text-stone-400 underline underline-offset-4 hover:text-blue-600;
 	}
 
 	hr {
-		@apply h-0 border-t-[1px] mt-[1rem] mb-[1.5rem] border-stone-300;
+		@apply h-0 border-t mt-[1rem] mb-[1.5rem] border-stone-300;
 
 		& + * {
 			@apply mt-0;
@@ -23,8 +39,7 @@
 	}
 
 	code, pre {
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-		font-size: 1em;
+		@apply font-mono text-base;
 	}
 
 	small {
@@ -32,10 +47,8 @@
 	}
 
 	sub, sup {
+		@apply relative align-baseline leading-none;
 		font-size: 75%;
-		line-height: 0;
-		position: relative;
-		vertical-align: baseline;
 	}
 
 	sub {
@@ -46,7 +59,7 @@
 		top: -0.5em;
 	}
 
-	blockquote, div.blockquote-highlight, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+	blockquote, div.blockquote-highlight, dl, dd, figure, pre {
 		margin: 0;
 	}
 
@@ -64,17 +77,11 @@
 	}
 
 	& > p {
-		margin-top: 1.3333333em;
-		margin-bottom: 1.3333333em;
+		@apply my-[1.3333333em];
 	}
 
 	blockquote {
-		margin-top: 1.6666667em;
-		margin-bottom: 1.6666667em;
-		padding-left: 1em;
-		border-color: var(--haydn-highlight-blue);;
-		border-left-width: 4px;
-		color: var(--haydn-stone-600);
+		@apply my-[1.6666667em] pl-[1em] text-stone-600 border-l-4 border-blue-400;
 	}
 
 	div.blockquote-highlight {
@@ -84,38 +91,8 @@
 		background-color: var(--haydn-highlight-orange)
 	}
 
-	h1 {
-		font-size: 2.6666667em;
-		margin-top: 0;
-		margin-bottom: 0.8333333em;
-		line-height: 1;
-	}
-
-	h2 {
-		font-size: 1.6666667em;
-		margin-top: 1.8666667em;
-		margin-bottom: 1.0666667em;
-		line-height: 1.3333333;
-	}
-
-	h3 {
-		font-size: 1.3333333em;
-		margin-top: 1.6666667em;
-		margin-bottom: 0.6666667em;
-		line-height: 1.5;
-	}
-
-	h4 {
-		margin-top: 1.7777778em;
-		margin-bottom: 0.4444444em;
-		line-height: 1.5555556;
-	}
-
 	.resizable-image {
-		max-width: 100%;
-		height: auto;
-		border-radius: 0.5rem;
-		border: 1px solid var(--novel-stone-200);
+		@apply max-w-full border border-stone-200 rounded-lg;
 	}
 
 	figure {
