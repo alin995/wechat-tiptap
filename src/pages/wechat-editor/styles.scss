@@ -34,16 +34,43 @@
     line-height: 1.5;
   }
 
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+
+    tbody {
+      td, th {
+        vertical-align: top;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      .column-resize-handle {
+        position: absolute;
+        right: -2px;
+        top: 0;
+        bottom: -2px;
+        width: 4px;
+        z-index: 20;
+        background-color: rgba(0, 0, 255, .12);
+        pointer-events: none;
+      }
+    }
+  }
+
   .tippy-box {
     max-width: 400px !important;
   }
 
   .mathematics-editor {
     background-color: var(--text-stone-100);
-    color: var(--haydn-white);
+    color: var(--text-white);
     padding: 0.2rem 0.5rem;
     border-radius: .25rem;
     display: inline-block;
   }
 
 }
+
+@import "styles-table";

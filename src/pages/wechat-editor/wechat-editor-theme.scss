@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+
+
+.ProseMirror {
+
+	*, ::before, ::after {
+		@apply box-border border-0 border-solid border-slate-400;
+	}
+
+	@apply m-0 font-sans text-lg leading-7 bg-white;
+
+	a {
+		@apply text-stone-400 underline underline-offset-4 hover:text-stone-600;
+	}
+
+	hr {
+		@apply h-0 border-t-[1px] mt-[1rem] mb-[1.5rem] border-stone-300;
+
+		& + * {
+			@apply mt-0;
+		}
+	}
+
+	code, pre {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-size: 1em;
+	}
+
+	small {
+		font-size: 80%;
+	}
+
+	sub, sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
+	blockquote, div.blockquote-highlight, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+		margin: 0;
+	}
+
+	fieldset {
+		margin: 0;
+		padding: 0;
+	}
+
+	legend {
+		padding: 0;
+	}
+
+	img, svg, video, canvas, audio, iframe, embed, object {
+		vertical-align: middle;
+	}
+
+	& > p {
+		margin-top: 1.3333333em;
+		margin-bottom: 1.3333333em;
+	}
+
+	blockquote {
+		margin-top: 1.6666667em;
+		margin-bottom: 1.6666667em;
+		padding-left: 1em;
+		border-color: var(--haydn-highlight-blue);;
+		border-left-width: 4px;
+		color: var(--haydn-stone-600);
+	}
+
+	div.blockquote-highlight {
+		padding: 1em;
+		border: 1px solid var(--haydn-highlight-blue);
+		border-radius: 8px;
+		background-color: var(--haydn-highlight-orange)
+	}
+
+	h1 {
+		font-size: 2.6666667em;
+		margin-top: 0;
+		margin-bottom: 0.8333333em;
+		line-height: 1;
+	}
+
+	h2 {
+		font-size: 1.6666667em;
+		margin-top: 1.8666667em;
+		margin-bottom: 1.0666667em;
+		line-height: 1.3333333;
+	}
+
+	h3 {
+		font-size: 1.3333333em;
+		margin-top: 1.6666667em;
+		margin-bottom: 0.6666667em;
+		line-height: 1.5;
+	}
+
+	h4 {
+		margin-top: 1.7777778em;
+		margin-bottom: 0.4444444em;
+		line-height: 1.5555556;
+	}
+
+	.resizable-image {
+		max-width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+		border: 1px solid var(--novel-stone-200);
+	}
+
+	figure {
+		margin-top: 1.7777778em;
+		margin-bottom: 1.7777778em;
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	figcaption {
+		font-size: 0.8888889em;
+		line-height: 1.5;
+		margin-top: 1em;
+	}
+
+	code {
+		font-size: 0.8888889em;
+	}
+
+	pre {
+		font-size: 0.8888889em;
+		line-height: 1.75;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		border-radius: 0.375rem;
+		padding: 1em 1.5em;
+	}
+
+	.bullet-list, .ordered-list {
+		list-style: disc outside;
+		margin: -0.5rem 0 1.3333333em;
+		padding: 0 0 0 1.5555556em;
+		line-height: 0.75rem;
+
+		li {
+			line-height: 1.5;
+			margin-bottom: -0.5rem;
+			margin-top: 0.6666667em;
+			padding-left: 0.4444444em;
+		}
+	}
+
+	.bullet-list {
+		list-style: disc outside;
+	}
+
+	.ordered-list {
+		list-style: decimal outside;
+	}
+
+	ul[data-type="taskList"] {
+		li {
+			display: flex;
+			align-items: flex-start;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+
+			& > label {
+				margin-right: 0.2rem;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+
+				input[type="checkbox"] {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					background-color: var(--haydn-white);
+					cursor: pointer;
+					width: 1.2em;
+					height: 1.2em;
+					position: relative;
+					top: 8px;
+					border: 2px solid var(--haydn-stone-900);
+					margin: 0 0.3rem 0 0;
+					display: grid;
+					place-content: center;
+
+					&:hover {
+						background-color: var(--haydn-stone-50);
+					}
+
+					&:active {
+						background-color: var(--haydn-stone-200);
+					}
+
+					&::before {
+						content: "";
+						width: 0.65em;
+						height: 0.65em;
+						transform: scale(0);
+						transition: 120ms transform ease-in-out;
+						box-shadow: inset 1em 1em;
+						transform-origin: center;
+						clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+					}
+
+					&:checked::before {
+						transform: scale(1);
+					}
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				& > label {
+					margin-right: 0.5rem;
+				}
+			}
+
+			&[data-checked="true"] p {
+				color: var(--haydn-stone-400);
+				text-decoration: line-through;
+				text-decoration-thickness: 2px;
+			}
+		}
+	}
+
+	h2 + *, h3 + *, h4 + * {
+		margin-top: 0;
+	}
+
+	table {
+		border-collapse: collapse;
+		table-layout: fixed;
+		width: 100%;
+		margin: 0;
+		text-align: left;
+		font-size: 0.8888889em;
+		line-height: 1.5;
+		text-indent: 0;
+
+		tbody {
+			display: table-row-group;
+			vertical-align: middle;
+
+			tr {
+				display: table-row;
+				vertical-align: inherit;
+			}
+
+			th {
+				padding-right: 0.75em;
+				padding-bottom: 0.75em;
+				padding-left: 0.75em;
+				font-weight: bold;
+				text-align: left;
+				background-color: #f1f3f5;
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+
+			td, th {
+				min-width: 1em;
+				border: 1px solid var(--haydn-stone-300);
+				padding: 0.5em 0.5em;
+				vertical-align: top;
+				box-sizing: border-box;
+				position: relative;
+			}
+		}
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes enter {
+
+		from {
+			opacity: var(--tw-enter-opacity, 1);
+			transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0));
+		}
+	}
+
+	@keyframes exit {
+		to {
+			opacity: var(--tw-exit-opacity, 1);
+			transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
+		}
+	}
+
+	@keyframes spinning {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	/* Overwrite tippy-box original max-width */
+
+	.tippy-box {
+		max-width: 400px !important;
+	}
+
+	@keyframes spinning {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+@tailwind utilities;
+
+@import "katex/dist/katex.css";

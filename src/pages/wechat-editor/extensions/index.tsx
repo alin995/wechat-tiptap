@@ -1,39 +1,52 @@
 import { Extensions, InputRule } from "@tiptap/core";
-import { HorizontalRule } from "@tiptap/extension-horizontal-rule";
+import { Blockquote } from "@tiptap/extension-blockquote";
+import { Bold } from "@tiptap/extension-bold";
+import { CharacterCount } from "@tiptap/extension-character-count";
+import { Code } from "@tiptap/extension-code";
+import { CodeBlock } from "@tiptap/extension-code-block";
+import { Color } from "@tiptap/extension-color";
+import { Document } from "@tiptap/extension-document";
+import { Dropcursor } from "@tiptap/extension-dropcursor";
+import { FontFamily } from "@tiptap/extension-font-family";
+import { HardBreak } from "@tiptap/extension-hard-break";
 import { Heading } from "@tiptap/extension-heading";
 import { History } from "@tiptap/extension-history";
-import { Placeholder } from "@tiptap/extension-placeholder";
-import { Underline } from "@tiptap/extension-underline";
-import { TextStyle } from "@tiptap/extension-text-style";
-import { Color } from "@tiptap/extension-color";
-import { TaskItem } from "@tiptap/extension-task-item";
-import { TaskList } from "@tiptap/extension-task-list";
-import { FontFamily } from "@tiptap/extension-font-family";
-import { Highlight } from "@tiptap/extension-highlight";
-import { Subscript } from "@tiptap/extension-subscript";
-import { Superscript } from "@tiptap/extension-superscript";
-import { TextAlign } from "@tiptap/extension-text-align";
-import { Bold } from "@tiptap/extension-bold";
-import { Document } from "@tiptap/extension-document";
-import { HardBreak } from "@tiptap/extension-hard-break";
+import { HorizontalRule } from "@tiptap/extension-horizontal-rule";
 import { Italic } from "@tiptap/extension-italic";
 import { Paragraph } from "@tiptap/extension-paragraph";
+import { Placeholder } from "@tiptap/extension-placeholder";
 import { Strike } from "@tiptap/extension-strike";
+import { Subscript } from "@tiptap/extension-subscript";
+import { Superscript } from "@tiptap/extension-superscript";
+import { TaskItem } from "@tiptap/extension-task-item";
+import { TaskList } from "@tiptap/extension-task-list";
 import { Text } from "@tiptap/extension-text";
+import { TextStyle } from "@tiptap/extension-text-style";
+import { Underline } from "@tiptap/extension-underline";
+import { Highlight } from "@tiptap/extension-highlight";
+import { TextAlign } from "@tiptap/extension-text-align";
 import { BulletList } from "@tiptap/extension-bullet-list";
 import { OrderedList } from "@tiptap/extension-ordered-list";
 import { ListItem } from "@tiptap/extension-list-item";
-import { Blockquote } from "@tiptap/extension-blockquote";
-import { CodeBlock } from "@tiptap/extension-code-block";
-import { Code } from "@tiptap/extension-code";
-import { Dropcursor } from "@tiptap/extension-dropcursor";
 
+import { BlockquoteHighlight } from "@wechat-editor/extensions/extension-blockquote-highlight";
+import { FontSize } from "@wechat-editor/extensions/extension-font-size";
+import { Indent } from "@wechat-editor/extensions/extension-indent";
 import { Link } from "@wechat-editor/extensions/extension-link";
+import { Magic } from "@wechat-editor/extensions/extension-magic";
+import { ResizableImage } from "@wechat-editor/extensions/extension-resizable-image";
+import { Table } from "@wechat-editor/extensions/extension-table";
+import { TableCell } from "@wechat-editor/extensions/extension-table-cell";
+import { TableRow } from "@wechat-editor/extensions/extension-table-row";
+import { TableHeader } from "@wechat-editor/extensions/extension-table-header";
+import { SlashCommand } from "@wechat-editor/extensions/slash-command";
+import { TableCellBackground } from "@wechat-editor/extensions/extension-table-cell-background";
 
 export const TiptapExtensions: Extensions = (() => {
     return [
         Document,
         History,
+        CharacterCount,
         Heading,
         Paragraph,
         Text,
@@ -135,6 +148,15 @@ export const TiptapExtensions: Extensions = (() => {
             nested: true,
         }),
 
+        BlockquoteHighlight.configure({
+            HTMLAttributes: {},
+        }),
+        FontSize,
+        Indent.configure({
+            defaultLevel: 0,
+            minLevel: 0,
+            maxLevel: 10,
+        }),
         Link.configure({
             autolink: true,
             openOnClick: true,
@@ -143,6 +165,22 @@ export const TiptapExtensions: Extensions = (() => {
                 class: "",
             },
         }),
+        Magic,
+        ResizableImage.configure({
+            inline: true,
+            HTMLAttributes: {
+                class: "resizable-image",
+            },
+        }),
+        Table.configure({
+            resizable: true,
+            allowTableNodeSelection: true,
+        }),
+        TableHeader,
+        TableRow,
+        TableCell,
+        TableCellBackground,
+        SlashCommand,
     ]
 })()
 

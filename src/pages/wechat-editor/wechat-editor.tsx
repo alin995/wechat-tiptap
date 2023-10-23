@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Content, Editor, EditorContent, Range, useEditor } from "@tiptap/react";
+import { Content, Editor, EditorContent, useEditor } from "@tiptap/react";
 import { useDebouncedCallback } from "use-debounce";
 
 import { TiptapExtensions } from "@wechat-editor/extensions";
 import { TiptapEditorProps } from "@wechat-editor/editor-props";
 import { getPrevText } from "./utils";
 
+import { TextContentBubbleMenu } from "@wechat-editor/bubble-menu";
+
 import "./styles.scss"
+import "./wechat-editor-theme.scss"
 
 export interface WechatEditorProps {
     initialContent?: any
@@ -38,28 +41,28 @@ export const WechatEditor = (props: WechatEditorProps) => {
             editor.chain().focus().setTextSelection(0).scrollIntoView().run()
         },
         onUpdate: async ({editor}) => {
-            if (!editor) {
-                return
-            }
+            if (editor) {
+                contentChange?.(editor)
 
-            contentChange?.(editor)
+                const selection = editor.state.selection;
 
-            const selection = editor.state.selection;
+                const lastTwo = getPrevText(editor, 2);
+                if (lastTwo === "++") {
+                    const r = {
+                        from: selection.from - 2,
+                        to: selection.from,
+                    }
+                    editor.chain().deleteRange(r).activateMagic().run()
 
-            const lastTwo = getPrevText(editor, 2);
-            if (lastTwo === "++") {
-                const r: Range = {
-                    from: selection.from - 2,
-                    to: selection.from,
+                } else {
+                    debouncedUpdates(editor);
                 }
-                editor.chain().deleteRange(r).activateMagic().run()
-
-            } else {
-                debouncedUpdates(editor);
             }
         },
         onSelectionUpdate: ({editor}) => {
-            editor && contentChange?.(editor)
+            if (editor) {
+                contentChange?.(editor)
+            }
         },
         autofocus: true,
     })
@@ -68,12 +71,15 @@ export const WechatEditor = (props: WechatEditorProps) => {
         editorChange?.(editor)
     }, [editor])
 
+    console.log(timestamp)
+
     return <div>
+        {editor && <TextContentBubbleMenu editor={editor}/>}
         <div
             ref={(x) => containerRef.current = x!}
             className="w-full h-full/[-132]"
             onClick={(event) => {
-                if (editor && !event.target.closest('.haydn-free-node')) {
+                if (editor && !event.target.closest('.wechat-free-node')) {
                     editor.chain().focus().run()
                 }
             }}
