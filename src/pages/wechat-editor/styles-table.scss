@@ -1,215 +1,183 @@
 @charset "UTF-8";
+@tailwind base;
+@tailwind components;
+
 
 %SELECTION_OVERLAY {
-  position: absolute;
-  content: "";
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: var(--wechat-highlight-blue);
-  opacity: 0.3;
-  pointer-events: none;
+	@apply absolute inset-0 bg-blue-200 opacity-30 pointer-events-none content-[""];
 }
 
 %ACTION_BOARD {
-  z-index: 2;
-  background-color: var(--wechat-stone-200);
-  opacity: 0.3;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 1;
-  }
+	@apply z-[2] bg-stone-200 opacity-30 cursor-pointer hover:opacity-100;
 }
 
 %INSERT_ICON {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSI2NCA2NCA4OTYgODk2IiBmaWxsPSIjMDBmIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUxMiA2NEMyNjQuNiA2NCA2NCAyNjQuNiA2NCA1MTJzMjAwLjYgNDQ4IDQ0OCA0NDggNDQ4LTIwMC42IDQ0OC00NDhTNzU5LjQgNjQgNTEyIDY0em0xOTIgNDcyYzAgNC40LTMuNiA4LTggOEg1NDR2MTUyYzAgNC40LTMuNiA4LTggOGgtNDhjLTQuNCAwLTgtMy42LTgtOFY1NDRIMzI4Yy00LjQgMC04LTMuNi04LTh2LTQ4YzAtNC40IDMuNi04IDgtOGgxNTJWMzI4YzAtNC40IDMuNi04IDgtOGg0OGM0LjQgMCA4IDMuNiA4IDh2MTUyaDE1MmM0LjQgMCA4IDMuNiA4IDh2NDh6Ij48L3BhdGg+PC9zdmc+");
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMnB4IiB2aWV3Qm94PSI2NCA2NCA4OTYgODk2IiBmaWxsPSIjMDBmIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUxMiA2NEMyNjQuNiA2NCA2NCAyNjQuNiA2NCA1MTJzMjAwLjYgNDQ4IDQ0OCA0NDggNDQ4LTIwMC42IDQ0OC00NDhTNzU5LjQgNjQgNTEyIDY0em0xOTIgNDcyYzAgNC40LTMuNiA4LTggOEg1NDR2MTUyYzAgNC40LTMuNiA4LTggOGgtNDhjLTQuNCAwLTgtMy42LTgtOFY1NDRIMzI4Yy00LjQgMC04LTMuNi04LTh2LTQ4YzAtNC40IDMuNi04IDgtOGgxNTJWMzI4YzAtNC40IDMuNi04IDgtOGg0OGM0LjQgMCA4IDMuNiA4IDh2MTUyaDE1MmM0LjQgMCA4IDMuNiA4IDh2NDh6Ij48L3BhdGg+PC9zdmc+");
 }
 
 .wechat-editor-table-wrapper {
-  max-width: 654px;
-  position: relative;
+	@apply relative max-w-[654px];
 
-  &.ProseMirror-selectednode, .selectedCell {
-    &:after {
-      @extend %SELECTION_OVERLAY;
-    }
-  }
+	&.ProseMirror-selectednode, .selectedCell {
+		&:after {
+			@extend %SELECTION_OVERLAY;
+		}
+	}
 
-  .wechat-editor-table-actions {
-    @extend %ACTION_BOARD;
+	.wechat-editor-table-actions {
+		@extend %ACTION_BOARD;
 
-    position: absolute;
-    top: -12px;
-    left: -14px;
-    width: 14px;
-    height: 12px;
-    border-top-left-radius: 4px;
-    opacity: 0;
+		@apply absolute top-[-12px] left-[-14px] w-[14px] h-[14px] rounded-tl opacity-0;
 
-    &:hover {
-      top: -24px;
-      left: -24px;
-      width: 24px;
-      height: 24px;
-      border-radius: 4px;
-      background-color: var(--wechat-highlight-blue);
-    }
-  }
+		&:hover {
+			@apply top-[-24px] left-[-24px] w-6 h-6 rounded-tl rounded bg-blue-200 opacity-30;
+		}
+	}
 
-  .wechat-editor-table-row-actions {
-    @extend %ACTION_BOARD;
+	.wechat-editor-table-row-actions {
+		@extend %ACTION_BOARD;
 
-    position: absolute;
-    top: 0;
-    left: -14px;
-    width: 13px;
-    height: 100%;
-    border-bottom-left-radius: 4px;
-    opacity: 0;
+		@apply absolute flex flex-col top-0 left-[-14px] w-[13px] h-full rounded-bl opacity-0;
 
-    display: flex;
-    flex-direction: column;
+		.row-action-overlay {
+			width: 100%;
+			border-top: 1px solid var(--wechat-white);
 
-    .row-action-overlay {
-      width: 100%;
-      border-top: 1px solid var(--wechat-white);
+			.row-action-container {
+				width: 100%;
+				position: relative;
 
-      .row-action-container {
-        width: 100%;
-        position: relative;
+				.row-action-insert-before, .row-action-insert-after {
+					position: absolute;
+					left: calc(50% - 6px);
+					width: 12px;
+					height: 12px;
+					z-index: 30;
+					opacity: 0;
+					@extend %INSERT_ICON;
+					cursor: e-resize;
+				}
 
-        .row-action-insert-before, .row-action-insert-after {
-          position: absolute;
-          left: calc(50% - 6px);
-          width: 12px;
-          height: 12px;
-          z-index: 30;
-          opacity: 0;
-          @extend %INSERT_ICON;
-          cursor: e-resize;
-        }
+				.row-action-insert-before {
+					top: -6px;
+				}
 
-        .row-action-insert-before {
-          top: -6px;
-        }
+				.row-action-insert-after {
+					bottom: -6px;
+				}
 
-        .row-action-insert-after {
-          bottom: -6px;
-        }
-
-        &:hover {
-          .row-action-insert-before, .row-action-insert-after {
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
+				&:hover {
+					.row-action-insert-before, .row-action-insert-after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
 
 
-  table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
+	table {
+		border-collapse: collapse;
+		table-layout: fixed;
+		width: 100%;
 
-    thead {
-      th {
-        height: 0;
-        position: relative;
+		thead {
+			th {
+				height: 0;
+				position: relative;
 
-        &:not(:last-child) {
-          border-right: 1px solid var(--wechat-white);
-        }
+				&:not(:last-child) {
+					border-right: 1px solid var(--wechat-white);
+				}
 
-        .column-action-overlay {
-          @extend %ACTION_BOARD;
-          position: absolute;
-          top: -12px;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 12px;
-          opacity: 0;
-          border-bottom: 1px solid var(--wechat-white);
+				.column-action-overlay {
+					@extend %ACTION_BOARD;
+					position: absolute;
+					top: -12px;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 12px;
+					opacity: 0;
+					border-bottom: 1px solid var(--wechat-white);
 
-          .column-action-container {
-            position: absolute;
-            width: 50%;
-            height: 100%;
+					.column-action-container {
+						position: absolute;
+						width: 50%;
+						height: 100%;
 
-            &:last-child {
-              left: calc(50%);
-            }
-          }
-        }
+						&:last-child {
+							left: calc(50%);
+						}
+					}
+				}
 
-        &:last-child {
-          .column-action-overlay {
-            border-top-right-radius: 4px;
-          }
-        }
+				&:last-child {
+					.column-action-overlay {
+						border-top-right-radius: 4px;
+					}
+				}
 
-      }
+			}
 
-      .column-action-insert-before, .column-action-insert-after {
-        position: absolute;
-        top: calc(50% - 6px);
-        width: 12px;
-        height: 12px;
-        z-index: 30;
-        opacity: 0;
-        @extend %INSERT_ICON;
-        cursor: s-resize;
-      }
+			.column-action-insert-before, .column-action-insert-after {
+				position: absolute;
+				top: calc(50% - 6px);
+				width: 12px;
+				height: 12px;
+				z-index: 30;
+				opacity: 0;
+				@extend %INSERT_ICON;
+				cursor: s-resize;
+			}
 
-      .column-action-insert-before {
-        left: -6px;
-      }
+			.column-action-insert-before {
+				left: -6px;
+			}
 
-      .column-action-insert-after {
-        right: -6px;
-      }
+			.column-action-insert-after {
+				right: -6px;
+			}
 
-      .column-action-container:hover {
-        .column-action-insert-before, .column-action-insert-after {
-          opacity: 1;
-        }
-      }
+			.column-action-container:hover {
+				.column-action-insert-before, .column-action-insert-after {
+					opacity: 1;
+				}
+			}
 
-    }
+		}
 
-    tbody {
-      td, th {
-        vertical-align: top;
-        box-sizing: border-box;
-        position: relative;
-      }
+		tbody {
+			td, th {
+				vertical-align: top;
+				box-sizing: border-box;
+				position: relative;
+			}
 
-      .column-resize-handle {
-        position: absolute;
-        right: -2px;
-        top: 0;
-        bottom: -2px;
-        width: 4px;
-        z-index: 20;
-        background-color: rgba(0, 0, 0, .12);
-        pointer-events: none;
-      }
-    }
+			.column-resize-handle {
+				position: absolute;
+				right: -2px;
+				top: 0;
+				bottom: -2px;
+				width: 4px;
+				z-index: 20;
+				background-color: rgba(0, 0, 0, .12);
+				pointer-events: none;
+			}
+		}
 
-  }
+	}
 
-  &:hover {
-    .wechat-editor-table-actions, .column-action-overlay, .wechat-editor-table-row-actions {
-      opacity: .8;
-    }
-  }
+	&:hover {
+		.wechat-editor-table-actions, .column-action-overlay, .wechat-editor-table-row-actions {
+			opacity: .8;
+		}
+	}
 
 }
 
 .resize-cursor {
-  cursor: col-resize;
+	cursor: col-resize;
 }
 
+@tailwind utilities;
