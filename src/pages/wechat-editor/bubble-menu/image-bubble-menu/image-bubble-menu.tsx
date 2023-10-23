@@ -4,111 +4,79 @@ import { CropIcon, DeleteIcon, ReturnIcon } from "@wechat-editor/icons";
 import { readAsImage } from "@wechat-editor/utils";
 import { BubbleMenuItem, BubbleMenuItemDivider } from "../components/bubble-menu-item";
 
-// import styles from "./index.module.less"
-
-const styles = {
-
-}
 
 interface ImageBubbleMenuProps {
-    editor: Editor
-    cropMode: boolean
-    onCropModeChange: (model: boolean) => void
+	editor: Editor
+	cropMode: boolean
+	onCropModeChange: (model: boolean) => void
 }
 
 export const ImageBubbleMenu = (props: ImageBubbleMenuProps) => {
 
-    const {editor, cropMode, onCropModeChange} = props
+	const {editor, cropMode, onCropModeChange} = props
 
-    const findSingleNodeWithPos = () => {
-        const nodesWithPos = findChildrenInRange(editor.state.doc, {
-            from: editor.state.selection.from,
-            to: editor.state.selection.to,
-        }, node => node.type.name === 'resizableImage')
+	const findSingleNodeWithPos = () => {
+		const nodesWithPos = findChildrenInRange(editor.state.doc, {
+			from: editor.state.selection.from,
+			to: editor.state.selection.to,
+		}, node => node.type.name === 'resizableImage')
 
-        return nodesWithPos.length === 1 ? nodesWithPos[0] : {}
-    }
+		return nodesWithPos.length === 1 ? nodesWithPos[0] : {}
+	}
 
-    const shouldShow = () => {
-        const {node} = findSingleNodeWithPos()
-        return node && node.type.name === 'resizableImage'
-    }
+	const shouldShow = () => {
+		const {node} = findSingleNodeWithPos()
+		return node && node.type.name === 'resizableImage'
+	}
 
-    const tippyOptions = {
-        moveTransition: "transform 0.15s ease-out",
-    }
+	const tippyOptions = {
+		moveTransition: "transform 0.15s ease-out",
+	}
 
-    // const handleRotate = () => {
-    //     const element = document.querySelector(".ProseMirror-selectednode") as HTMLImageElement;
-    //     if (element && editor.isActive("resizableImage")) {
-    //         const style = window.getComputedStyle(element)
-    //
-    //         const transform = element.style.transform
-    //
-    //         console.log(transform)
-    //
-    //         const selection = editor.state.selection;
-    //         editor.chain().focus()
-    //             .setResizableImage({
-    //                 src: element.src,
-    //                 alt: element.alt,
-    //                 title: element.title,
-    //                 style: `width: ${style.width}; height:${style.height}; transform: rotate(270deg)`
-    //             })
-    //             .run()
-    //         editor.chain().focus().setNodeSelection(selection.from).run()
-    //     }
-    // }
+	const handleReset = async () => {
+		const element = document.querySelector(".ProseMirror-selectednode img") as HTMLImageElement;
+		if (element && editor.isActive("resizableImage")) {
+			const image = await readAsImage(element.src)
+			editor.chain().focus()
+				.setResizableImage({
+					src: element.src,
+					alt: element.alt,
+					title: element.title,
+					width: image.width,
+					height: image.height,
+				})
+				.run()
+		}
+	}
 
-    const handleReset = async () => {
-        const element = document.querySelector(".ProseMirror-selectednode img") as HTMLImageElement;
-        if (element && editor.isActive("resizableImage")) {
-            const image = await readAsImage(element.src)
-            editor.chain().focus()
-                .setResizableImage({
-                    src: element.src,
-                    alt: element.alt,
-                    title: element.title,
-                    width: image.width,
-                    height: image.height,
-                })
-                .run()
-        }
-    }
+	return <>
+		<BubbleMenu
+			className="flex pt-2 pb-2 pl-3 pr-3 rounded bg-stone-100 shadow-lg"
+			editor={editor!}
+			shouldShow={shouldShow}
+			tippyOptions={tippyOptions}
+		>
+			<BubbleMenuItem
+				icon={<CropIcon className="w-5 h-5"/>}
+				active={cropMode}
+				onClick={() => onCropModeChange(!cropMode)}
+			/>
 
-    return <>
-        <BubbleMenu
-            className={styles.haydnBubbleMenu}
-            editor={editor!}
-            shouldShow={shouldShow}
-            tippyOptions={tippyOptions}
-        >
-            <BubbleMenuItem
-                icon={<CropIcon/>}
-                active={cropMode}
-                onClick={() => onCropModeChange(!cropMode)}
-            />
+			<BubbleMenuItem
+				icon={<ReturnIcon className="w-5 h-5"/>}
+				onClick={() => handleReset()}
+			/>
+			<BubbleMenuItemDivider/>
 
-            {/*<BubbleMenuItem*/}
-            {/*    icon={<RotateIcon/>}*/}
-            {/*    onClick={() => handleRotate()}*/}
-            {/*/>*/}
+			<BubbleMenuItem
+				icon={<DeleteIcon className="w-5 h-5"/>}
+				onClick={() => {
+					editor.chain().focus().deleteSelection().run()
+				}}
+			/>
 
-            <BubbleMenuItem
-                icon={<ReturnIcon/>}
-                onClick={() => handleReset()}
-            />
-            <BubbleMenuItemDivider/>
+		</BubbleMenu>
 
-            <BubbleMenuItem
-                icon={<DeleteIcon/>}
-                onClick={() => {
-                    editor.chain().focus().deleteSelection().run()
-                }}
-            />
-
-        </BubbleMenu>
-
-    </>
+	</>
 
 };

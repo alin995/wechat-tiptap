@@ -16,7 +16,7 @@ export const App = () => {
     console.log(timestamp)
     return (
         <main className={`flex min-h-screen w-full flex-col items-center justify-between`}>
-            <div className="fixed flex flex-col z-[9999] w-full bg-white">
+            <div className="fixed flex flex-col z-[999] w-full bg-white">
                 <div className="w-full h-14 flex items-center justify-between border-b bg-gradient-to-r from-slate-900 text-white">
                     <p className="fixed left-0 top-0 flex w-full justify-center p-4 w-auto">
                         <span className="font-bold">WechatTiptap</span>&nbsp;-&nbsp;<span className="italic">A wechat-style editor based on tiptap</span>

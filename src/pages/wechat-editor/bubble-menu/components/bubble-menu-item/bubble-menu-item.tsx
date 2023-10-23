@@ -16,7 +16,7 @@ export interface BubbleMenuItemProps {
 export const BubbleMenuItem = (props: BubbleMenuItemProps) => {
     const {className = '', title, icon, suffix, disabled, active, onClick} = props
 
-    return <button className={`${className} flex flex-nowrap whitespace-nowrap justify-content mx-1 rounded ${disabled ? 'opacity-50' : ''} ${active ? 'bg-slate-200' : ''} hover:bg-stone-300`} onClick={() => {
+    return <button className={`${className} flex flex-nowrap whitespace-nowrap justify-content mx-1 text-xs rounded ${disabled ? 'opacity-50' : ''} ${active ? 'bg-slate-200' : ''} hover:bg-stone-300`} onClick={() => {
         if (!disabled) {
             onClick?.()
         }
