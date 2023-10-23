@@ -1,3 +1,4 @@
+export * from "./copy-to-clipboard"
 export * from "./get-prev-text"
 export * from "./is-cell-selection"
 export * from "./is-magic-exists"

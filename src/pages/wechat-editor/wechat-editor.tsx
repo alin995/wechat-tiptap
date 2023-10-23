@@ -6,10 +6,11 @@ import { TiptapExtensions } from "@wechat-editor/extensions";
 import { TiptapEditorProps } from "@wechat-editor/editor-props";
 import { getPrevText } from "./utils";
 
-import { TextContentBubbleMenu } from "@wechat-editor/bubble-menu";
+import { ImageBubbleMenu, LinkBubbleMenu, TextContentBubbleMenu } from "@wechat-editor/bubble-menu";
 
 import "./styles.scss"
 import "./wechat-editor-theme.scss"
+import { ImageClipper, ImageResizer } from "@wechat-editor/components";
 
 export interface WechatEditorProps {
     initialContent?: any
@@ -22,6 +23,8 @@ export const WechatEditor = (props: WechatEditorProps) => {
     const {initialContent, editorChange, contentChange} = props
 
     const [content, setContent] = useState(initialContent)
+
+	const [cropImageMode, setCropImageMode] = useState(false)
 
     const containerRef = useRef<HTMLDivElement>()
     const documentRef = useRef<HTMLDivElement>()
@@ -71,9 +74,9 @@ export const WechatEditor = (props: WechatEditorProps) => {
         editorChange?.(editor)
     }, [editor])
 
-    console.log(timestamp)
-
     return <div>
+		{editor && <ImageBubbleMenu editor={editor} cropMode={cropImageMode} onCropModeChange={setCropImageMode}/>}
+		{editor && <LinkBubbleMenu editor={editor}/>}
         {editor && <TextContentBubbleMenu editor={editor}/>}
         <div
             ref={(x) => containerRef.current = x!}
@@ -88,6 +91,8 @@ export const WechatEditor = (props: WechatEditorProps) => {
                 ref={(x) => documentRef.current = x!}
                 className=""
             >
+				{editor && editor.isActive("resizableImage") && cropImageMode && <ImageClipper editor={editor} container={documentRef}/>}
+				{editor && editor.isActive("resizableImage") && !cropImageMode && <ImageResizer editor={editor} container={documentRef}/>}
                 <EditorContent editor={editor} className="wechat-editor-content"/>
             </div>
         </div>
