@@ -4,6 +4,7 @@ import Moveable, { MoveableManagerInterface } from "react-moveable";
 import { convertUnitSize } from "@daybrush/utils";
 import { CropHandlers } from "./crop-handlers";
 
+import "./image-clipper.scss"
 
 const getTargetElement = (): HTMLImageElement => {
     return document.querySelector(".ProseMirror-selectednode img") as HTMLImageElement;
@@ -51,7 +52,7 @@ const ResizeMaskViewable = {
 
         const {viewLeft, viewTop, viewWidth, viewHeight} = targetElement?.dataset || {}
 
-        return <div key={"resize-mask-viewer"} className={"haydn-image-clipper-mask-container"} style={{
+        return <div key={"resize-mask-viewer"} className={"wechat-image-clipper-mask-container"} style={{
             width: `${rect.width}px`,
             height: `${rect.height}px`,
         }}>
@@ -103,9 +104,9 @@ export const ImageClipper = ({editor}) => {
     })()
 
     return (
-        <div className="haydn-image-clipper-container">
+        <div className="wechat-image-clipper-container">
             <Moveable
-                className="haydn-image-clipper"
+                className="wechat-image-clipper"
                 target={getTargetElement()}
                 ables={[ResizeMaskViewable]}
                 props={{

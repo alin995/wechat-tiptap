@@ -3,6 +3,7 @@ import { flushSync } from "react-dom"
 import Moveable from "react-moveable";
 import { convertUnitSize } from "@daybrush/utils";
 
+import "./image-resizer.scss"
 
 const getTargetElement = (): HTMLDivElement => {
     return document.querySelector(".ProseMirror-selectednode") as HTMLDivElement;
@@ -74,9 +75,9 @@ const updateNode = (editor) => {
 export const ImageResizer = ({editor}) => {
 
     return (
-        <div className="haydn-image-resizer-container">
+        <div className="wechat-image-resizer-container">
             <Moveable
-                className="haydn-image-resizer"
+                className="wechat-image-resizer"
                 target={getTargetElement()}
                 draggable={true}
                 startDragRotate={0}

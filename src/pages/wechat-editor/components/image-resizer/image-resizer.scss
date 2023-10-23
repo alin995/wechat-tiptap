@@ -1,0 +1,88 @@
+@charset "UTF-8";
+@tailwind base;
+@tailwind components;
+
+.wechat-image-resizer-container {
+	@apply relative top-[-172px] left-[-364px];
+
+    .moveable-control.moveable-resizable {
+		@apply rounded-none;
+    }
+
+    .moveable-control.moveable-clip-control {
+		@apply w-[22px] h-[22px] border-0 rounded-none;
+        background: transparent !important;
+
+        &[data-clip-index="0"] {
+			@apply mt-0 ml-0 cursor-nw-resize;
+        }
+
+        &[data-clip-index="1"] {
+			@apply mt-0 ml-[-11px] cursor-n-resize;
+        }
+
+        &[data-clip-index="2"] {
+			@apply mt-0 ml-[-22px] cursor-ne-resize;
+        }
+
+        &[data-clip-index="3"] {
+			@apply mt-[-11px] ml-[-22px] cursor-e-resize;
+        }
+
+        &[data-clip-index="4"] {
+			@apply mt-[-22px] ml-[-22px] cursor-se-resize;
+        }
+
+        &[data-clip-index="5"] {
+			@apply mt-[-22px] ml-[-11px] cursor-s-resize;
+        }
+
+        &[data-clip-index="6"] {
+			@apply mt-[-22px] ml-0 cursor-sw-resize;
+        }
+
+        &[data-clip-index="7"] {
+			@apply mt-[-11px] ml-0 cursor-w-resize;
+        }
+    }
+
+}
+
+.CROP_VERTICAL_GUIDELINE {
+	@apply absolute top-0 w-0 h-full border-r border-white;
+}
+
+.CROP_HORIZONTAL_GUIDELINE {
+	@apply absolute left-0 w-full h-0 border-b border-white;
+}
+
+.wechat-image-resizer-mask-container {
+	@apply relative top-0 left-0 pointer-events-none;
+
+    .resize-area {
+		@apply absolute top-0 left-0 pointer-events-none;
+        background-color: rgba(0, 0, 0, 0.36);
+    }
+
+    .crop-area {
+		@apply absolute overflow-hidden pointer-events-none;
+
+        .crop-vertical-guideline-0 {
+            @apply CROP_VERTICAL_GUIDELINE left-1/3;
+        }
+
+        .crop-vertical-guideline-1 {
+			@apply CROP_VERTICAL_GUIDELINE left-2/3;
+        }
+
+        .crop-horizontal-guideline-0 {
+			@apply CROP_HORIZONTAL_GUIDELINE top-1/3;
+        }
+
+        .crop-horizontal-guideline-1 {
+			@apply CROP_HORIZONTAL_GUIDELINE top-2/3;
+        }
+    }
+}
+
+@tailwind utilities;
