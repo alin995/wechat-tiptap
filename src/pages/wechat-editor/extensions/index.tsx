@@ -34,6 +34,7 @@ import { FontSize } from "@wechat-editor/extensions/extension-font-size";
 import { Indent } from "@wechat-editor/extensions/extension-indent";
 import { Link } from "@wechat-editor/extensions/extension-link";
 import { Magic } from "@wechat-editor/extensions/extension-magic";
+import { Mathematics } from "@wechat-editor/extensions/extension-mathematics";
 import { ResizableImage } from "@wechat-editor/extensions/extension-resizable-image";
 import { Table } from "@wechat-editor/extensions/extension-table";
 import { TableCell } from "@wechat-editor/extensions/extension-table-cell";
@@ -166,6 +167,7 @@ export const TiptapExtensions: Extensions = (() => {
             },
         }),
         Magic,
+		Mathematics,
         ResizableImage.configure({
             inline: true,
             HTMLAttributes: {

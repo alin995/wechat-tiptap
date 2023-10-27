@@ -17,12 +17,12 @@ export const App = () => {
     return (
         <main className={`flex min-h-screen w-full flex-col items-center justify-between`}>
             <div className="fixed flex flex-col z-[999] w-full bg-white">
-                <div className="w-full h-14 flex items-center justify-between border-b bg-gradient-to-r from-slate-900 text-white">
-                    <p className="fixed left-0 top-0 flex w-full justify-center p-4 w-auto">
-                        <span className="font-bold">WechatTiptap</span>&nbsp;-&nbsp;<span className="italic">A wechat-style editor based on tiptap</span>
+                <div className="w-full h-14 justify-between border-b bg-gradient-to-r from-slate-900 to-slate-100 text-white">
+                    <p className="fixed left-0 top-0 flex justify-center p-4">
+                        <span className="font-bold">WechatTiptap</span>&nbsp;-&nbsp;<span className="italic text-stone-100">A wechat-style WYSIWYG editor based on tiptap</span>
                     </p>
-                    <p className="fixed right-0 top-0 flex w-full justify-center p-4 w-auto">
-                        tail
+                    <p className="fixed right-0 top-0 flex justify-center p-4 text-sky-400">
+						<a href="https://github.com/alin995/wechat-tiptap" target="_blank">GitHub</a>
                     </p>
                 </div>
                 <div className="flex w-full items-center justify-between border-b bg-gradient-to-b from-zinc-200 font-mono text-lg ">
