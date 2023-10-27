@@ -21,7 +21,7 @@ export const App = () => {
                     <p className="fixed left-0 top-0 flex justify-center p-4">
                         <span className="font-bold">WechatTiptap</span>&nbsp;-&nbsp;<span className="italic text-stone-100">A wechat-style WYSIWYG editor based on tiptap</span>
                     </p>
-                    <p className="fixed right-0 top-0 flex justify-center p-4 text-sky-400">
+                    <p className="fixed right-0 top-0 flex justify-center p-4 text-stone-600">
 						<a href="https://github.com/alin995/wechat-tiptap" target="_blank">GitHub</a>
                     </p>
                 </div>

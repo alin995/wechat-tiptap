@@ -40,8 +40,8 @@ import { Table } from "@wechat-editor/extensions/extension-table";
 import { TableCell } from "@wechat-editor/extensions/extension-table-cell";
 import { TableRow } from "@wechat-editor/extensions/extension-table-row";
 import { TableHeader } from "@wechat-editor/extensions/extension-table-header";
-import { SlashCommand } from "@wechat-editor/extensions/slash-command";
 import { TableCellBackground } from "@wechat-editor/extensions/extension-table-cell-background";
+import { SlashCommand } from "@wechat-editor/extensions/slash-command";
 
 export const TiptapExtensions: Extensions = (() => {
     return [

@@ -153,7 +153,7 @@ export const TextContentBubbleMenu = (props: TextContentBubbleMenuProps) => {
                 {actionStatus.tableGroup || actionStatus.textFormatter && <BubbleMenuItemDivider/>}
 
                 <BubbleMenuItem
-                    icon={<LinkIcon/>}
+                    icon={<LinkIcon className="w-5 h-5"/>}
                     onClick={() => {
                         closeAllPopup()
                         const selection = editor.state.selection;
@@ -170,7 +170,7 @@ export const TextContentBubbleMenu = (props: TextContentBubbleMenuProps) => {
             {actionStatus.magic && <>
                 {actionStatus.tableGroup || actionStatus.textFormatter && <BubbleMenuItemDivider/>}
 
-                <BubbleMenuItem icon={<MagicIcon/>} onClick={() => {
+                <BubbleMenuItem icon={<MagicIcon className="w-5 h-5"/>} onClick={() => {
                     closeAllPopup()
                     editor && editor.chain().focus().activateMagic().run()
                 }}/>
