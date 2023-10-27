@@ -4,13 +4,12 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { TiptapExtensions } from "@wechat-editor/extensions";
 import { TiptapEditorProps } from "@wechat-editor/editor-props";
-import { getPrevText } from "./utils";
-
 import { ImageBubbleMenu, LinkBubbleMenu, TextContentBubbleMenu } from "@wechat-editor/bubble-menu";
+import { ImageClipper, ImageResizer } from "@wechat-editor/components";
+import { getPrevText } from "@wechat-editor/utils";
 
 import "./styles.scss"
 import "./wechat-editor-theme.scss"
-import { ImageClipper, ImageResizer } from "@wechat-editor/components";
 
 export interface WechatEditorProps {
     initialContent?: any
@@ -64,6 +63,7 @@ export const WechatEditor = (props: WechatEditorProps) => {
         },
         onSelectionUpdate: ({editor}) => {
             if (editor) {
+				editorChange?.(editor)
                 contentChange?.(editor)
             }
         },

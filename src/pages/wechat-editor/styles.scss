@@ -1,6 +1,9 @@
+@charset "UTF-8";
+@tailwind base;
+@tailwind components;
 
 .ProseMirror {
-	max-width: 100%;
+	@apply max-w-full;
 
 	&:focus {
 		outline: 2px solid transparent;
@@ -11,14 +14,11 @@
 		max-width: 400px !important;
 	}
 
-	.mathematics-editor {
-		background-color: var(--text-stone-100);
-		color: var(--text-white);
-		padding: 0.2rem 0.5rem;
-		border-radius: .25rem;
-		display: inline-block;
+	.Tiptap-mathematics-editor {
+		@apply inline-block px-[0.5em] py-[0.2em] text-white bg-stone-600 rounded;
 	}
 
 }
+@tailwind utilities;
 
 @import "styles-table";

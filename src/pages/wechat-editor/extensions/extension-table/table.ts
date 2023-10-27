@@ -165,6 +165,7 @@ export const Table = Node.create<TableOptions>({
             })
         }
     },
+
     addCommands() {
         return {
             insertTable:
