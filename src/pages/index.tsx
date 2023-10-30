@@ -32,7 +32,7 @@ export const App = () => {
 
 
             <div className="mt-[108px] w-full min-h-screen items-center justify-between border-b text-lg">
-                <div className="w-[800px] ml-[300px] p-16 bg-white shadow-2xl ">
+                <div className="ml-[300px]">
                     <WechatEditor
                         initialContent={DEFAULT_CONTENT}
                         editorChange={x => {

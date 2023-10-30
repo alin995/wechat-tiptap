@@ -89,7 +89,7 @@ export const WechatEditor = (props: WechatEditorProps) => {
         >
             <div
                 ref={(x) => documentRef.current = x!}
-                className=""
+                className="table mt-4 p-24 w-[800px] bg-white border border-stone-300 shadow-xl shadow-stone-400"
             >
 				{editor && editor.isActive("resizableImage") && cropImageMode && <ImageClipper editor={editor} container={documentRef}/>}
 				{editor && editor.isActive("resizableImage") && !cropImageMode && <ImageResizer editor={editor} container={documentRef}/>}

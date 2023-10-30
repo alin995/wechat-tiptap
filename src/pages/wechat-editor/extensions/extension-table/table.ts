@@ -295,7 +295,6 @@ export const Table = Node.create<TableOptions>({
 
     addProseMirrorPlugins() {
         const isResizable = this.options.resizable && this.editor.isEditable
-
         return [
             ...(isResizable
                 ? [
