@@ -167,7 +167,8 @@ export const TiptapExtensions: Extensions = (() => {
             },
         }),
         Magic,
-		Mathematics,
+		// TODO: unsuccessful
+		// Mathematics,
         ResizableImage.configure({
             inline: true,
             HTMLAttributes: {
