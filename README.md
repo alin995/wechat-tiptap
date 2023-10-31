@@ -16,6 +16,8 @@ Wechat-Tiptap is an AI-blessed WYSIWYG editor. The text generation capability is
 
 WechatTiptap is a WYSIWYG (What You see is what You Get) editor that combines AI technology for better text generation and graphics generation. This can provide users with a more convenient, efficient and powerful editing experience.
 
+
+</div>
 ## features：
 
 1）WeChat document styles；
@@ -36,7 +38,7 @@ WechatTiptap is a WYSIWYG (What You see is what You Get) editor that combines AI
 - link bubble menu
 - table bubble menu
 </br>
-</div>
+
 
 ## 🤖 Main functionMain function
 
