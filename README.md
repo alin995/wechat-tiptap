@@ -5,7 +5,9 @@
 WechatTiptap is an AI-blessed WYSIWYG editor
 
 <img aligin="center" src="/doc/image/image-001.png" />
-
+<img aligin="center" src="/doc/image/image-002.png" />
+<img aligin="center" src="/doc/image/image-003.png" />
+<img aligin="center" src="/doc/image/image-004.png" />
 `	`
 
 ## About The Project
