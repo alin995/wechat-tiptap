@@ -61,20 +61,22 @@ const ResizeMaskViewable = {
                 width: `${rect.width}px`,
                 height: `${rect.height}px`,
             }}/>
-            <div className={"resize-area"} style={{
+            <div className="resize-area" style={{
                 width: `${rect.width}px`,
                 height: `${rect.height}px`,
             }}/>
 
-            <div className={"crop-area"} style={{
+            <div className="crop-area" style={{
                 left: `${viewLeft}px`,
                 top: `${viewTop}px`,
                 width: `${viewWidth}px`,
                 height: `${viewHeight}px`,
             }}>
-                <img src={targetElement?.["src"]} alt="" style={{
+                <img className="border border-4 border-white" src={targetElement?.["src"]} alt="" style={{
                     position: "absolute",
                     pointerEvents: "none",
+					maxWidth: "none",
+					maxHeight: "none",
                     width: `${rect.width}px`,
                     height: `${rect.height}px`,
                     marginLeft: `${-viewLeft}px`,
