@@ -18,6 +18,7 @@ WechatTiptap is a WYSIWYG (What You see is what You Get) editor that combines AI
 
 
 </div>
+<br/>
 ## features：
 
 1）WeChat document styles；
