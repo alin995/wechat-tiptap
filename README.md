@@ -2,7 +2,7 @@
 
 <h1 align="center">Wechat-tiptap</h1>
 
-WechatTiptap is an AI-blessed WYSIWYG editor
+WechatTiptap是一个人工智能的所见即所得编辑器
 
 <img aligin="center" src="/doc/image/image-001.png" />
 <img aligin="center" src="/doc/image/image-002.png" />
@@ -12,9 +12,9 @@ WechatTiptap is an AI-blessed WYSIWYG editor
 
 ## About The Project
 
-Wechat-Tiptap is an AI-blessed WYSIWYG editor. The text generation capability is based on ChatGPT, and other LLMs.
+WechatTiptap是一个人工智能的所见即所得编辑器。文本生成功能基于ChatGPT和其他LLM.
 
-WechatTiptap is a WYSIWYG (What You see is what You Get) editor that combines AI technology for better text generation and graphics generation. This can provide users with a more convenient, efficient and powerful editing experience.
+WechatTiptap是一个所见即所得的编辑器，它结合了人工智能技术，可以更好地生成文本和图形。这可以为用户提供更方便、高效、强大的编辑体验。
 
 
 </div>
@@ -22,38 +22,37 @@ WechatTiptap is a WYSIWYG (What You see is what You Get) editor that combines AI
 
 ## features：
 
-1）WeChat document styles；
-2）Toolbar 3) outline
-4）Tiptap extendsions
+1）微信文档样式;；
+2）工具栏 
+3) 大纲
+4）Tiptap 扩展
 
-- ai text generation
-- table: with extension bar and background color
-- image: float crop and resize
-- font size
-- blockquote
-- paragraph indent
-- link
+- 人工智能文本生成
+- 表格: 与扩展栏和背景颜色
+- 图片: 浮动裁剪和调整大小
+- 字体大小
+- 引用
+- 段落缩进
+- 链接
 
-5. bubble mens
+5. 气泡菜单
 
-- image bubble menu
-- link bubble menu
-- table bubble menu
+- 图像气泡菜单
+- 链接气泡菜单
+- 表哥气泡菜单
 </br>
 
 
-## 🤖 Main functionMain function
+## 🤖 主要功能
 
-- Multiple people collaborate to edit documents online in real time
-- Support to insert pictures, crop and adjust the size of pictures
-- Supports a variety of text formulas
-- Support insert table
-- Text generation and text generation graph function and continue to write
-- Provide a more convenient, efficient and powerful editing experience
+-多人实时协作在线编辑文档
+-支持插入图片，裁剪和调整图片大小
+-支持多种文本公式
+-支持插入表
+-文本生成和文本生成图形的功能，并继续编写
+-提供更方便、高效和强大的编辑体验
 
 ## 🎮 Getting Started
-
-**Node Environment **
 
 **1.First `Fork` the project and then clone it locally**
 
@@ -86,31 +85,32 @@ yarn dev:web
 yarn build
 ```
 
-## ⛺️ Environment variable
+## ⛺️ 环境变量
 
-> We have **_used useCompletion() to encapsulate openai. If you want to modify it to your own LLM API, modify the file @ wechat 'editor/books/use-completions.ts'_**
+> 我们**使用useCompletion()来封装openai。如果你想将其修改为你自己的LLM API，请修改@微信` editor/books/use-completions.ts `文件**
 
-## 🚧 exploit
+## 🚧 引用
 
-> Local development or deployment is not recommended, because for technical reasons, it is difficult to configure the OpenAI API agent locally unless you can guarantee direct access to the OpenAI server.
+> 不推荐本地开发或部署，因为出于技术原因，很难在本地配置OpenAI API代理，除非你能保证直接访问OpenAI服务器。
 
-#### Local development
+#### 本地开发
 
-1. Install nodejs and yarn. For details, ask ChatGPT
-2. Run yarn install
-3. Develop the web project yarn dev:web
-4. Server-side project development 'yarn dev'
-5. Package the project 'yarn build'
+1.  安装nodejs和yarn。详情请咨询ChatGPT
+2. 运行yarn install
+3.开发web项目yarn dev:web
+4. 服务端项目开发` yarn dev `
+5. 打包项目` yarn build `
 
-Go to the directory src/pages/wechat-editor/hooks/use-completion to locate the file use-completion.ts
-If the openai key is set, the apiKey adds its own key
-If there is no set key configure your own baseURL to 👉 https://github.com/THUDM/ChatGLM2-6B/blob/main/openai_api.py
+到目录src/pages/wechat-editor/hooks/use-completion找到文件use-completion.ts
+如果设置了openai密钥，apiKey会添加自己的密钥
+如果没有设置键，请配置您自己的baseURL到👉https://github.com/THUDM/ChatGLM2-6B/blob/main/openai_api.py
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+用浏览器打开[http://localhost:3000](http://localhost:3000)以查看结果。
+用浏览器打开[http://localhost:3000](http://localhost:3000)以查看结果。
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file. You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+你可以通过修改`pages/index.tsx`来开始编辑页面。当你编辑文件时，页面会自动更新。你可以通过修改`pages/index.tsx`来开始编辑页面。当你编辑文件时，页面会自动更新。
 
+<br/>
 ## Roadmap
 
 - [x] Toolbar
@@ -127,7 +127,7 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 ### 📖 Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+本节列出了用于引导项目的所有主要框架/库。在致谢部分留下任何附加组件/插件。这里有几个例子。
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
@@ -144,7 +144,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+在MIT许可下发布。更多信息请参阅`LICENSE.txt`。.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,7 +160,7 @@ Project Link: [https://github.com/alin995](https://github.com/alin995)
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.txt) for more information.
+MIT许可证(MIT)。请参阅[License File](LICENSE.txt)了解更多信息。
 
 ## Thanks
 
