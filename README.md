@@ -112,10 +112,10 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
+- [x] Toolbar
+- [x] Tiptap extendsions
+- [ ] Bring along
+- [ ] download json file
 - [ ] Multi-language Support
   - [ ] Chinese
   - [ ] Spanish
