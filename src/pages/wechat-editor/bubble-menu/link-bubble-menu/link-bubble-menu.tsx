@@ -41,7 +41,7 @@ export const LinkBubbleMenu = (props: LinkBubbleMenuProps) => {
 
 	return <>
 		<BubbleMenu
-			className="flex pt-2 pb-2 pl-3 pr-3 rounded bg-stone-100 shadow-lg"
+			className="flex pt-2 pb-2 pl-3 pr-3 rounded bg-stone-200 shadow-lg"
 			editor={editor}
 			shouldShow={shouldShow}
 			tippyOptions={tippyOptions}

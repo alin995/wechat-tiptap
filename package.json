@@ -2,7 +2,7 @@
 	"name": "wechat-tiptap",
 	"version": "0.1.0",
 	"private": true,
-	"description": "A wechat-style editor based on tiptap",
+	"description": "A wechat-styles editor based on tiptap",
 	"author": "Thundax, Alin",
 	"main": "index.js",
 	"license": "MIT",

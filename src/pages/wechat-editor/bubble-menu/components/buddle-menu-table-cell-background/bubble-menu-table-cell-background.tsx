@@ -8,7 +8,7 @@ import { BubbleMenuColorSelector, BubbleMenuColorSelectorProps } from "../bubble
 
 
 export interface BubbleMenuTableCellBackgroundProps extends Pick<BubbleMenuColorSelectorProps, "prompt"> {
-    editor: Editor | null
+	editor: Editor | null
 }
 
 /*
@@ -16,26 +16,26 @@ export interface BubbleMenuTableCellBackgroundProps extends Pick<BubbleMenuColor
  */
 export const BubbleMenuTableCellBackground = (props: BubbleMenuTableCellBackgroundProps) => {
 
-    const {editor, open, onOpenChange} = props
+	const {editor, open, onOpenChange} = props
 
-    const [color, setColor] = useLocalStorage(`${STORAGE_CELL_BACKGROUND}.current`, "")
+	const [color, setColor] = useLocalStorage(`${STORAGE_CELL_BACKGROUND}.current`, "")
 
-    const handleColorChange = (color: string) => {
-        setColor(color)
-        if (!color || color === '') {
-            editor && editor.chain().focus().unsetCellBackground().run()
-        } else {
-            editor && editor.chain().focus().setCellBackground(color).run()
-        }
-    }
+	const handleColorChange = (color: string) => {
+		setColor(color)
+		if (!color || color === '') {
+			editor && editor.chain().focus().unsetCellBackground().run()
+		} else {
+			editor && editor.chain().focus().setCellBackground(color).run()
+		}
+	}
 
-    return <BubbleMenuColorSelector
-        storageKey={`${STORAGE_CELL_BACKGROUND}.recent`}
-        icon={<PaletteIcon/>}
-        open={open}
-        onOpenChange={onOpenChange}
-        color={color}
-        onColorChange={handleColorChange}
-        onClick={() => handleColorChange(color)}
-    />
+	return <BubbleMenuColorSelector
+		storageKey={`${STORAGE_CELL_BACKGROUND}.recent`}
+		icon={<PaletteIcon className="w-5 h-[17px]"/>}
+		open={open}
+		onOpenChange={onOpenChange}
+		color={color}
+		onColorChange={handleColorChange}
+		onClick={() => handleColorChange(color)}
+	/>
 }
