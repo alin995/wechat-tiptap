@@ -1,0 +1,22 @@
+
+.statusbar-wrapper {
+    padding: 0 16px;
+    display: flex;
+    height: 100%;
+    background-color: var(--workbench-theme-statusbar-background, #f0f0f0);
+    border-top: 1px solid var(--workbench-theme-statusbar-border, rgba(0, 0, 0, 0.04));
+    align-items: center;
+    transition: background-color 0.3s ease;
+    will-change: transform;
+    font-family: -apple-system,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+
+    .statusbar-simple-text {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--haydn-stone-600);
+        height: 24px;
+        line-height: 24px;
+    }
+}
+
