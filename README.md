@@ -3,7 +3,9 @@
 <span><i>一个微信风格的富文本编辑器</i></span>
 </div>
 <br/>
-https://github.com/alin995/wechat-tiptap/tree/main/doc/videos/demo.mp4
+
+ <video  src="https://user-images.githubusercontent.com/74090594/279589586-c4916f1a-6704-4e45-b9ed-e841f654b194.mp4" type="video/mp4"> </video> 
+
 <br/>
 
 ## 关于
