@@ -5,7 +5,7 @@
 </div>
 
 ## 关于
-WechatTiptap是一个基于Tiptap的WYSIWYG的富文本编辑器。界面和操作采用微信文档风格，同时提供了AI能力。
+WechatTiptap是一个基于 Tiptap 的 WYSIWYG 编辑器。界面和操作采用微信文档风格，同时提供了AI能力。
 
 ## 特性
 - 微信文档风格样式
