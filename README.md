@@ -1,8 +1,10 @@
 <div align="center">
 <h1 align="center">WechatTiptap</h1>
 <span><i>一个微信风格的富文本编辑器</i></span>
-<video src="./doc/videos/demo.mp4" width="100%" height="100%" controls="controls" autoplay></video>
 </div>
+<br/>
+https://github.com/alin995/wechat-tiptap/tree/main/doc/videos/demo.mp4
+<br/>
 
 ## 关于
 WechatTiptap是一个基于 Tiptap 的 WYSIWYG 编辑器。界面和操作采用微信文档风格，同时提供了AI能力。
