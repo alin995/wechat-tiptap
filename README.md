@@ -1,7 +1,7 @@
 <div align="center">
 <h1 align="center">WechatTiptap</h1>
 <span><i>一个微信风格的富文本编辑器</i></span>
-<img aligin="center" src="./doc/image/image-001.png" />
+<video src="./doc/videos/demo.mp4" width="100%" height="100%" controls="controls" autoplay></video>
 </div>
 
 ## 关于
