@@ -56,19 +56,24 @@ export const TiptapExtensions: Extensions = (() => {
         Strike,
         Underline,
         HardBreak,
-        BulletList,
+		BulletList.configure({
+			HTMLAttributes: {
+				class: "bullet-list",
+			},
+		}),
         OrderedList.configure({
-            defaultOptions: null,
             HTMLAttributes: {
-                class: "",
+                class: "ordered-list",
             },
         }),
-        ListItem.configure({
-            HTMLAttributes: {
-                class: "",
-            },
-        }),
-        Blockquote.configure({
+        ListItem,
+		TaskList.configure({
+			HTMLAttributes: {
+				class: "task-list",
+			},
+		}),
+		TaskItem,
+		Blockquote.configure({
             HTMLAttributes: {
                 class: "",
             },
@@ -137,17 +142,6 @@ export const TiptapExtensions: Extensions = (() => {
         }),
         Subscript,
         Superscript,
-        TaskList.configure({
-            HTMLAttributes: {
-                class: "",
-            },
-        }),
-        TaskItem.configure({
-            HTMLAttributes: {
-                class: "",
-            },
-            nested: true,
-        }),
 
         BlockquoteHighlight.configure({
             HTMLAttributes: {},

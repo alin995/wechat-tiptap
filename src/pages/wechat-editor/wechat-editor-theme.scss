@@ -59,7 +59,7 @@
 		top: -0.5em;
 	}
 
-	blockquote, div.blockquote-highlight, dl, dd, figure, pre {
+	blockquote, dl, dd, pre {
 		@apply m-0;
 	}
 
@@ -84,7 +84,7 @@
 	}
 
 	div.blockquote-highlight {
-		@apply p-[1em] border border-blue-400 rounded-lg bg-orange-400;
+		@apply m-0 p-[.75em] border border-blue-200 rounded-lg bg-orange-100;
 	}
 
 	.resizable-image {
@@ -92,7 +92,7 @@
 	}
 
 	figure {
-		@apply my-8;
+		@apply m-0 my-8;
 
 		& > * {
 			@apply my-0;
@@ -114,10 +114,10 @@
 	}
 
 	.bullet-list, .ordered-list {
-		@apply list-disc list-outside mt-[-0.5rem] mb-[1.3333333em] mx-0 p-0 pr-[1.5555556em] leading-3 rounded-lg;
+		@apply mt-[-0.5em] mb-[1.3333333em] mx-0 p-0 pl-[1.5em] leading-3 rounded-lg;
 
 		li {
-			@apply mt-[0.6666667em] mb-[-0.5rem] pl-[0.4444444em] leading-normal;
+			@apply my-[0.6666667em] pl-[0.4444444em] leading-normal;
 		}
 	}
 
@@ -129,18 +129,18 @@
 		@apply list-decimal list-outside;
 	}
 
-	ul[data-type="taskList"] {
+	.task-list {
 		li {
-			@apply flex items-start my-[1em];
+			@apply flex items-start my-[0.6666667em];
 
 			& > label {
 				@apply select-none mr-[0.2em];
 
 				input[type="checkbox"] {
-					@apply relative grid place-content-center top-[0.25em] m-0 ml-[0.3em] w-[1.2em] h-[1.2em] bg-white border-2 border-stone-900 cursor-pointer hover:bg-stone-50;
+					@apply relative grid place-content-center top-[0.3em] m-0 mx-[0.3em] w-[1em] h-[1em] appearance-none bg-white border-2 border-stone-900 cursor-pointer hover:bg-stone-100;
 
 					&:active {
-						@apply bg-stone-200;
+						@apply bg-stone-300;
 					}
 
 					&::before {
@@ -167,9 +167,7 @@
 			}
 
 			&[data-checked="true"] p {
-				color: var(--haydn-stone-400);
-				text-decoration: line-through;
-				text-decoration-thickness: 2px;
+				@apply text-stone-400 line-through decoration-2;
 			}
 		}
 	}

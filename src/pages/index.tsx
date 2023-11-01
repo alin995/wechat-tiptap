@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Editor } from "@tiptap/react";
 import { Outline, Statusbar, Toolbar, WechatEditor } from "@wechat-editor/index";
 
@@ -13,6 +13,21 @@ export const App = () => {
 	const [timestamp, setTimestamp] = useState(0)
 
 	console.log(timestamp)
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			if (editor) {
+				const content = editor.getJSON()
+				console.log(JSON.stringify(content))
+			}
+		}, 3000)
+
+		return () => {
+			clearInterval(timer)
+		}
+
+	}, [editor])
+
 	return (
 		<main className="flex min-h-screen w-full flex-col items-center justify-between bg-stone-100">
 			<div className="fixed flex flex-col z-[999] w-full bg-white">
