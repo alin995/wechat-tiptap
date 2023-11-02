@@ -3,72 +3,72 @@
 <span><i>A WeChat-style rich text editor</i></span>
 </div>
 <br/>
-
- <video  src="https://user-images.githubusercontent.com/74090594/279589586-c4916f1a-6704-4e45-b9ed-e841f654b194.mp4" type="video/mp4"> </video> 
-
+<video  src="https://user-images.githubusercontent.com/74090594/279589586-c4916f1a-6704-4e45-b9ed-e841f654b194.mp4" type="video/mp4"> </video> 
 <br/>
 
 ## About
 WechatTiptap is a WYSIWYG editor based on Tiptap. The interface and operation are WeChat document style, while providing AI capabilities.
 
-## characteristic
-- WeChat document style style
-- Table of Contents
+## Features
+- WeChat document style
+- Outline
 - Toolbar
-- State column
-- Tiptap extensions/plugins
-  - AI：Continuation, abbreviation, expansion, outline；
-  - table: Extended editing bar, background color
-  - image: Floating crop, resizing
+- Statusbar
+- Tiptap extensions
+  - AI：Completion, shorten, expansion, summary；
+  - Table: floating toolbar, background
+  - Image: floating crop and resizing bar
   - Font size
-  - quote
-  - Paragraph indentation
+  - Quote
+  - Indent
   - Link
 - Bubble menu
-  - image menu
-  - link menu
-  - table menu
+  - Image
+  - Link
+  - Table
 
-## How to use
-- environment
-  - Node 16 and above
+## How To Use
+- Environment
+> Node 16 and above
+
 - Install
 ```
 yarn
-
 ```
 or
 ```
 npm install
 ```
+
 - Debug
 ```
 npm start dev
 ```
-- compile
+
+- Build
 ```
 npm start build
 ```
 
-## Technology stack
+## Tech Stack
 WechatTiptap is based on the following technologies:
 - [Tiptap](https://tiptap.dev/) – text editor
 - [OpenAI](https://openai.com/) - AI completions
 - [TailwindCSS](https://tailwindcss.com/) – styles
 
 
-## roadmap
+## Roadmap
 - [x] WeChat document style
-- [x] table
-- [x] image
-- [ ] download
-- [ ] together
-- [ ] i18n
+- [x] Table
+- [x] Image
+- [ ] Export JOSN/HTML
+- [ ] Collaboration
+- [ ] I18n
   - [x] Chinese
   - [ ] English
 
 
-## Licensing agreement
+## License
 Released under the MIT license. See`LICENSE.txt`for more information.
 
 ## Reference Engineering
