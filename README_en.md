@@ -52,9 +52,9 @@ npm start build
 
 ## Tech Stack
 WechatTiptap is based on the following technologies:
-- [Tiptap](https://tiptap.dev/) – text editor
+- [Tiptap](https://tiptap.dev/) - text editor
 - [OpenAI](https://openai.com/) - AI completions
-- [TailwindCSS](https://tailwindcss.com/) – styles
+- [TailwindCSS](https://tailwindcss.com/) - styles
 
 
 ## Roadmap
