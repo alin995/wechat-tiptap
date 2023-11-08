@@ -47,6 +47,7 @@ npm start dev
 npm start build
 ```
 <br/>
+
 ## 技术栈
 WechatTiptap基于下列技术:
 - [Tiptap](https://tiptap.dev/) – text editor
