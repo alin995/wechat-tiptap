@@ -17,7 +17,10 @@ WechatTiptap is a WYSIWYG editor based on Tiptap. The interface and operation ar
 - Tiptap extensions
   - AI：Completion, shorten, expansion, summary；
   - Table: floating toolbar, background
+     <video  src="https://github.com/alin995/wechat-tiptap/assets/74090594/2d527c8a-cb30-40fc-9a43-9c9583594000" type="video/mp4"> </video> 
+
   - Image: floating crop and resizing bar
+        <video  src="https://github.com/alin995/wechat-tiptap/assets/74090594/9a12b727-eec3-4bee-a435-d7269a320916" type="video/mp4"> </video> 
   - Font size
   - Quote
   - Indent
