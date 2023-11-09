@@ -19,7 +19,7 @@ WechatTiptap是一个基于 Tiptap 的 WYSIWYG 编辑器。界面和操作采用
   - 表格: 扩展编辑栏、背景色
    <video  src="https://user-images.githubusercontent.com/74090594/279589586-c4916f1a-6704-4e45-b9ed-e841f654b194.mp4" type="video/mp4"> </video> 
   - 图片: 浮动裁剪、调整尺寸
-    <video  src="https://user-images.githubusercontent.com/74090594/279589586-c4916f1a-6704-4e45-b9ed-e841f654b194.mp4" type="video/mp4"> </video> 
+    <video  src="https://github.com/alin995/wechat-tiptap/assets/74090594/9a12b727-eec3-4bee-a435-d7269a320916" type="video/mp4"> </video> 
   - 字体大小
   - 引用
   - 段落缩进
