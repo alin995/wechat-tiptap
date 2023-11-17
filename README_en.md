@@ -57,7 +57,6 @@ WechatTiptap is based on the following technologies:
 - [OpenAI](https://openai.com/) - AI completions
 - [TailwindCSS](https://tailwindcss.com/) - styles
 
-<br/>
 
 ## Roadmap
 - [x] WeChat document style
@@ -69,7 +68,6 @@ WechatTiptap is based on the following technologies:
   - [x] Chinese
   - [ ] English
 
-<br/>
 
 ## License
 Released under the MIT license. See`LICENSE.txt`for more information.
