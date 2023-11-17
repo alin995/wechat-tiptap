@@ -72,7 +72,6 @@ WechatTiptap is based on the following technologies:
 ## License
 Released under the MIT license. See`LICENSE.txt`for more information.
 
-<br/>
 
 ## Reference Engineering
 - [novel](https://github.com/steven-tey/novel)
