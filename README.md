@@ -53,7 +53,7 @@ WechatTiptap基于下列技术:
 - [Tiptap](https://tiptap.dev/) – text editor
 - [OpenAI](https://openai.com/) - AI completions
 - [TailwindCSS](https://tailwindcss.com/) – styles
-<br/>
+
 
 ## 路线图
 - [x] 微信文档风格
