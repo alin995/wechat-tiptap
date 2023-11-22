@@ -67,7 +67,7 @@ WechatTiptap基于下列技术:
 
 
 ## 许可协议
-在MIT许可下发布。更多信息请参阅`LICENSE.txt`。.
+在MIT许可下发布。更多信息请参阅`LICENSE.txt`。
 
 ## 引用工程
 - [novel](https://github.com/steven-tey/novel)
